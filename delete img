@@ -1,0 +1,35 @@
+index.php
+
+1. Добавляем в index.php
+$php_value = phpversion();
+if (version_compare($php_value, '5.3.6') == -1) {
+    echo 'Currently installed PHP version (' . $php_value . ') is not supported. Minimal required PHP version is 5.3.6.';
+    die();
+}
+
+define('AREA', 'C');
+
+try {
+    require(dirname(__FILE__) . '/init.php');
+    fn_dispatch();
+} catch (Tygh\Exceptions\AException $e) {
+    $e->output();
+}
+
+2. Обновляем любую страницу на сайте
+3. Возвращем index.php:
+$php_value = phpversion();
+if (version_compare($php_value, '5.3.6') == -1) {
+    echo 'Currently installed PHP version (' . $php_value . ') is not supported. Minimal required PHP version is 5.3.6.';
+    die();
+}
+
+define('AREA', 'C');
+
+try {
+    require(dirname(FILE) . '/init.php');
+    fn_dispatch();
+
+} catch (Tygh\Exceptions\AException $e) {
+    $e->output();
+}
